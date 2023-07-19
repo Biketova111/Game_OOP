@@ -9,17 +9,18 @@ public class Peasant extends Unit {
 
 
     @Override
-    public void step(ArrayList<Unit> units) {
+    public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
         Unit tmp = getNearest(units);
-        System.out.println(tmp.name + " " + coordinates.getDistance(tmp.coordinates));
+        System.out.println("Ближайший к крестьянину " + name + ", " + tmp.name + " " + coordinates.getDistance(tmp.coordinates));
     }
 
 
 
     @Override
     public String getInfo() {
-        return "Крестьянин " + name
-                + ": (" + coordinates.x + ";" + coordinates.y + ");";
+        return "Крестьянин " + name+ ": (здоровье - "
+                + health + ")";
+
     }
 }
 

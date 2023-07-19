@@ -11,9 +11,9 @@ public class Magician extends Intelligence {
     }
 
    @Override
-    public void step(ArrayList<Unit> units) {
+    public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
         Unit tmp = getNearest(units);
-        System.out.println(tmp.name + " " + coordinates.getDistance(tmp.coordinates));
+        System.out.println("Ближайший к магу " + name + ", " + tmp.name + " " + coordinates.getDistance(tmp.coordinates));
     }
 
 
@@ -22,8 +22,8 @@ public class Magician extends Intelligence {
 
     @Override
     public String getInfo() {
-        return "Маг " + name
-                + ": (" + coordinates.x + ";" + coordinates.y + ");";
+        return "Маг " + name + ": (здоровье - "
+                + health + ")";
 
     }
 }

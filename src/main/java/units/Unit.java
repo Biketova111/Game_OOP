@@ -6,7 +6,8 @@ public abstract class Unit implements gameInterface {
 
     public String name;
     public int health;
-    public int damage;
+
+   public int damage;
     public int actionPoint;
 
     Coordinates coordinates;
@@ -20,7 +21,7 @@ public abstract class Unit implements gameInterface {
     }
 
   @Override
-    public void step(ArrayList<Unit> units) {
+    public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
 
     }
 
@@ -34,6 +35,21 @@ public abstract class Unit implements gameInterface {
             }
         }
         return nearestEnemy;
+    }
+
+    public void doAttack (Unit target) {
+        if (health>0) {
+            target.getDamage(damage);
+        }
+    }
+
+    public void getDamage(int damage) {
+        if (health - damage> 0) {
+            health -=damage;
+        }
+        else {
+            health=0;
+        }
     }
 
 

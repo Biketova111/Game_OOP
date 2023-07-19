@@ -8,21 +8,30 @@ public class Sniper extends Dexterity {
         super(name, x, y);
         super.accuracy = new Random().nextInt(50, 100);
         super.skill = new Random().nextInt(50);
-        super.health = new Random().nextInt(100, 200);
+        super.arrow = 30;
     }
 
    @Override
-    public void step(ArrayList<Unit> units) {
-        Unit tmp = getNearest(units);
-        System.out.println(tmp.name + " " + coordinates.getDistance(tmp.coordinates));
-    }
+    public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
+
+        if (this.health == 0 || this.arrow == 0) return; // Если жизней 0 или стрел 0 вернуть управление
+        Unit tmp = getNearest(units); // Найти ближайшего противника
+        System.out.println("Ближайший к снайперу " + name + ", " + tmp.name + " " + coordinates.getDistance(tmp.coordinates));
+
+        doAttack(tmp); // Нанесение урона
 
 
+           if (team.contains(Peasant.class)) {
+               return;
+           }
+
+       }
 
     @Override
     public String getInfo() {
         return "Снайпер " + name
-                + ": (" + coordinates.x + ";" + coordinates.y + ");";
+                + ": (здоровье - "
+                + health + "; колличество стрел - " + arrow+ ")";
 
     }
 }

@@ -13,9 +13,9 @@ public class Monk extends Intelligence {
 
 
     @Override
-    public void step(ArrayList<Unit> units) {
+    public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
         Unit tmp = getNearest(units);
-        System.out.println(tmp.name + " " + coordinates.getDistance(tmp.coordinates));
+        System.out.println("Ближайший к монаху " + name + ", " + tmp.name + " " + coordinates.getDistance(tmp.coordinates));
     }
 
 
@@ -23,8 +23,8 @@ public class Monk extends Intelligence {
 
     @Override
     public String getInfo() {
-        return "Монах " + name
-                + ": (" + coordinates.x + ";" + coordinates.y + ");";
+        return "Монах " + name + ": (здоровье - "
+                + health + ")";
 
     }
 }

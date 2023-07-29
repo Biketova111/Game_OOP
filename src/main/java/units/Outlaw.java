@@ -5,8 +5,9 @@ import java.util.Random;
 
 public class Outlaw extends Power {
     public Outlaw(ArrayList<Unit> team1, String name, int x, int y) {
-        super(name, x, y);
-        super.force = new Random().nextInt(5, 20);
+        super(name, x, y, 2, 1);
+        super.attacksAmount = 2;
+        super.attackRange = 1;
 
     }
 
@@ -16,8 +17,11 @@ public class Outlaw extends Power {
     @Override
     public String getInfo() {
         return "Разбойник " + name
-                + ": (здоровье - "
-                + health+ ")";
+                + " [" + coordinates.x + ", " + coordinates.y + "]"
+                + ": (здоровье: " + health
+                + "/" + max_health
+                + "; статус: " + state
+                +  ")";
 
     }
 }

@@ -15,8 +15,12 @@ public class Monk extends Intelligence {
 
     @Override
     public String getInfo() {
-        return "Монах " + name + ": (здоровье - "
-                + health + ")";
+        return "Монах " + name + " [" + coordinates.x + ", " + coordinates.y + "]"
+                + ": (здоровье: " + health
+                + "/" + max_health
+                + "; статус: " + state
+                + "; мана: "
+                + mana + ")";
 
     }
 }

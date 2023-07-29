@@ -13,8 +13,13 @@ public class Magician extends Intelligence {
 
     @Override
     public String getInfo() {
-        return "Маг " + name + ": (здоровье - "
-                + health + ")";
+        return "Маг " + name+
+        " [" + coordinates.x + ", " + coordinates.y + "]"
+                + ": (здоровье: " + health
+                + "/" + max_health
+                + "; статус: " + state
+                + "; мана: "
+                + mana + ")";
 
     }
 }

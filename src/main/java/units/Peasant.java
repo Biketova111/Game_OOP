@@ -12,14 +12,22 @@ public class Peasant extends Unit {
     @Override
     public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
         Unit tmp = getNearest(units);
+        if (isAlive) {
+            if (state == "Busy") {
+                state = "Stand";
+            }
+        }
 
 
     }
 
     @Override
     public String getInfo() {
-        return "Крестьянин " + name+ ": (здоровье - "
-                + health + ")";
+        return "Крестьянин " + name+ " [" + coordinates.x + ", " + coordinates.y + "]"
+                + ": (здоровье: " + health
+                + "/" + max_health
+                + "; статус: " + state
+                +  ")";
 
     }
 }

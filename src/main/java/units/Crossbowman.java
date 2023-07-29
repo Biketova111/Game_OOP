@@ -15,9 +15,13 @@ public class Crossbowman extends Dexterity {
 
     @Override
     public String getInfo() {
-        return "Арбалетчик " + name
-                + ": (здоровье - "
-                + health + "; колличество стрел - " + arrow + ")";
+        return "Арбалетчик " + name +
+                " [" + coordinates.x + ", " + coordinates.y + "]"
+                + ": (здоровье: " + health
+                + "/" + max_health
+                + "; статус: " + state
+                + "; колличество стрел: "
+                + arrow + ")";
 
     }
 

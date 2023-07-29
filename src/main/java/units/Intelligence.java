@@ -9,11 +9,14 @@ public abstract class Intelligence extends Unit {
     public Intelligence(String name, int x, int y) {
 
         super(name, 200,200, 0, 2, x, y);
+    this.mana = mana;
+
     }
 
 
     @Override
-    public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
+    public void step(ArrayList<Unit> enemy, ArrayList<Unit> team) {
+
         if (isAlive) return;
         double tmpMinHeals = 1;
         Unit tmpHealth = team.get(0);

@@ -36,16 +36,16 @@ public class Main {
         for (int i=1; i<teamSize+1; i++) {
             switch (new Random().nextInt(1,5)) {
                 case 1:
-                    team2.add(new Spearman(team2, getName(), 1, i));
+                    team2.add(new Spearman(team2, getName(), 10, i));
                     break;
                 case 2:
-                    team2.add(new Magician(team2, getName(), 1, i));
+                    team2.add(new Magician(team2, getName(), 10, i));
                     break;
                 case 3:
-                    team2.add(new Crossbowman(team2, getName(), 1, i));
+                    team2.add(new Crossbowman(team2, getName(), 10, i));
                     break;
                 case 4:
-                    team2.add(new Peasant(team2, getName(), 1, i));
+                    team2.add(new Peasant(team2, getName(), 10, i));
                     break;
             }
 
@@ -56,40 +56,11 @@ public class Main {
         allTeam.addAll(team2);
 
 
+
         Scanner in = new Scanner(System.in);
+        View.view();
+        in.nextLine();
 
-
-
-
-
-//        System.out.println("Team 1:");
-//        team1.get(0).getInfo();
-//        team1.forEach(n-> System.out.println(n.getInfo()));
-
-//        System.out.println();
-//
-//        System.out.println("Team 2:");
-//
-//
-//        team2.get(0).getInfo();
-//        team2.forEach(n-> System.out.println(n.getInfo()));
-//
-//
-//        System.out.println();
-//
-//        System.out.println("Ближайшие:");
-//        team1.forEach(n-> n.step(team2, team1));
-//        System.out.println();
-//        team2.forEach(n-> n.step(team1, team2));
-//        System.out.println();
-//
-//        System.out.println("Результат атаки:");
-//        team1.forEach(n-> System.out.println(n.getInfo()));
-//
-//
-//
-//        System.out.println();
-//        team2.forEach(n-> System.out.println(n.getInfo()));
 
 
     }

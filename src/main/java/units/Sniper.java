@@ -16,8 +16,12 @@ public class Sniper extends Dexterity {
     @Override
     public String getInfo() {
         return "Снайпер " + name
-                + ": (здоровье - "
-                + health + "; колличество стрел - " + arrow+ ")";
+                + " [" + coordinates.x + ", " + coordinates.y + "]"
+                + ": (здоровье: " + health
+                + "/" + max_health
+                + "; статус: " + state
+                + "; колличество стрел: "
+                + arrow + ")";
 
     }
 }

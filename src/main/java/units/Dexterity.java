@@ -21,10 +21,10 @@ public abstract class Dexterity extends Unit {
     }
 
     @Override
-    public void step(ArrayList<Unit> units, ArrayList<Unit> team) {
+    public void step(ArrayList<Unit>enemy, ArrayList<Unit> team) {
 
         if (this.health == 0 || this.arrow == 0) return; // Если жизней 0 или стрел 0 вернуть управление
-        Unit tmp = getNearest(units); // Найти ближайшего противника
+        Unit tmp = getNearest(enemy); // Найти ближайшего противника
         System.out.println("Ближайший противник к " + name + ", " + tmp.name + " " + coordinates.getDistance(tmp.coordinates));
 
         doAttack(tmp); // Нанесение урона
